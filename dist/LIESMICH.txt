@@ -1,0 +1,42 @@
+﻿Moon Sweepers - ChunkLoader Mod 1.2
+===================================
+
+Was es macht
+------------
+Das Spiel schaltet Maschinen, Docks und Foerderbaender ab, wenn kein Spieler
+naeher als ca. 425 m ist. Roboter (Mk1/Mk2/Joonas) laufen dann nur noch in einer
+vereinfachten Simulation mit 50 % Effizienz. Die Mod setzt unsichtbare Anker an
+alle Maschinen-/Band-Gruppen (und an jeden aktiven Roboter). Fuer das Spiel steht
+dort dann immer "jemand". Alles laeuft dort also so, als waerst du in der Naehe.
+
+Ausserdem verteilt die Mod die fliegenden Staub-Kapseln auf alle Empfaenger.
+Das Spiel schickt sonst jede Kapsel zum naechsten Empfaenger, der sie dann
+nacheinander im 9-Sekunden-Takt annimmt. Jetzt geht jede Kapsel zu dem
+Empfaenger, der sie am schnellsten annehmen kann (Flugzeit + Warteschlange).
+Ein sich fuellender Speicher zaehlt zusaetzlich als Wartezeit.
+Volle Empfaenger werden wie im Spiel uebersprungen.
+
+Installation
+------------
+1. Spiel beenden.
+2. version.dll und ChunkLoader.ini in den Spielordner kopieren:
+   C:\Program Files (x86)\Steam\steamapps\common\Moon Sweepers
+   (Steam: Rechtsklick auf das Spiel > Verwalten > Lokale Dateien durchsuchen)
+3. Spiel starten. Im selben Ordner entsteht ChunkLoader.log, dort steht
+   "Hook ... installiert" und spaeter "X Anker aktiv".
+
+Im Spiel: F8 schaltet die Mod an/aus.
+
+Deinstallation: version.dll (und ChunkLoader.ini/.log) wieder loeschen.
+
+Hinweise
+--------
+- Mehr geladene Gebiete kosten mehr FPS. Wenn es ruckelt: In ChunkLoader.ini
+  MaxAnchors senken oder FollowRobots=0 setzen.
+- Kapsel-Verteilung abschalten: BalanceCapsules=0. FillPenaltySeconds hoeher =
+  staerker nach Fuellstand verteilen, 0 = nur nach Wartezeit.
+- Gedacht fuer Einzelspieler bzw. als Host.
+- Nach einem Spiel-Update kann die Mod aussteigen. Sie macht dann einfach nichts
+  und schreibt den Grund in ChunkLoader.log.
+- Vor der ersten Nutzung lieber ein Backup vom Spielstand machen:
+  %USERPROFILE%\AppData\LocalLow\DragDropGames\MoonSweepers

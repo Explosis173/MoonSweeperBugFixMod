@@ -1,0 +1,8 @@
+build/
+Spielstand-Backup/
+*.obj
+*.exp
+*.lib
+*.log
+release/
+
