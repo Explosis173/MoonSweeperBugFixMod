@@ -20,6 +20,33 @@ Press **F8** in game to turn the anchors on or off.
 
 **Uninstall:** delete `version.dll` (and `ChunkLoader.ini` / `ChunkLoader.log`).
 
+### Steam Deck / Linux (Proton)
+
+Proton uses its own built-in `version.dll` and ignores the one in the game folder unless you tell it otherwise.
+
+1. Switch to Desktop Mode.
+2. In Steam, right-click Moon Sweepers → Manage → Browse local files. The game folder is usually
+   `~/.local/share/Steam/steamapps/common/Moon Sweepers`
+   (on an SD card: `/run/media/<card>/steamapps/common/Moon Sweepers`).
+3. Copy `version.dll` and `ChunkLoader.ini` into that folder.
+4. Right-click Moon Sweepers → Properties → General → Launch Options and enter:
+   ```
+   WINEDLLOVERRIDES="version=n,b" %command%
+   ```
+5. Start the game (Game Mode is fine). `ChunkLoader.log` should now appear in the game folder.
+
+**Is it running?** There is no in-game overlay. Open `ChunkLoader.log` (the messages are in German):
+
+| Log line | Meaning |
+|---|---|
+| `Hook auf MoonWorld.Update installiert ... Bereit.` | Mod loaded |
+| `Hook auf MoonWorld.FindCatcher installiert` | Capsule balancing active |
+| `X Anker aktiv (aus Y Gebaeuden, Z Baendern) + N Roboter.` | Anchors placed, base kept loaded |
+
+No log file at all means the DLL was not loaded. Check the launch option.
+
+The Deck has no F8 key. Either map F8 to a button in Steam Input or just leave `Enabled=1` in `ChunkLoader.ini`.
+
 Back up your save before first use:
 `%USERPROFILE%\AppData\LocalLow\DragDropGames\MoonSweepers`
 
